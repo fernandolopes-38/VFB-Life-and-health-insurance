@@ -1,0 +1,30 @@
+@use './utils/_variables';
+
+@import './components/header.scss';
+@import './components/heroSection.scss';
+@import './components/aboutUsSection.scss';
+@import './components/servicesSection.scss';
+@import './components/blogSection.scss';
+@import './components/footer.scss';
+
+button {
+  color: variables.$color-white;
+
+  border-radius: 0.5rem;
+  
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  /* padding: 0 2rem; */
+}
+
+section + section {
+  margin-top: 6.25rem;
+}

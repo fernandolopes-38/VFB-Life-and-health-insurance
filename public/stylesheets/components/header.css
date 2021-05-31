@@ -1,0 +1,61 @@
+header {
+  max-width: 1440px;
+  height: 6.5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  width: 160px;
+  height: 55px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+}
+header ul li {
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  padding: 0 1.05rem;
+}
+header button {
+  font-size: 0.6875rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  height: 2.5rem;
+  padding: 0 1.55rem;
+  background: #024282;
+}
+header .buttons-container {
+  display: flex;
+  align-items: center;
+}
+header .select-wrapper {
+  position: relative;
+  color: #323232;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  font-size: 0.5625rem;
+  border: 1px solid #323232;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+header .select-wrapper select {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+}
+header .select-wrapper select option {
+  width: 30px;
+}
+
+/*# sourceMappingURL=header.css.map */

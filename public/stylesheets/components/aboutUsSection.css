@@ -1,0 +1,70 @@
+@charset "UTF-8";
+section#aboutUs {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section#aboutUs .main-img-container {
+  position: relative;
+  max-width: 350px;
+  max-height: 500px;
+}
+section#aboutUs .main-img-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+}
+section#aboutUs .secundary-img {
+  max-width: 240px;
+  max-height: 360px;
+}
+section#aboutUs article {
+  max-width: 450px;
+}
+section#aboutUs article h1 {
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+  font-weight: 800;
+  color: #024282;
+  margin: 0.5rem 0 1.25rem;
+}
+section#aboutUs article .subtitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #212121;
+}
+section#aboutUs article .text {
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  color: #212121;
+}
+section#aboutUs ul {
+  margin: 1rem 0 1rem 1.5rem;
+  list-style: none;
+}
+section#aboutUs li {
+  margin-top: 0.5rem;
+}
+section#aboutUs li::before {
+  content: "•";
+  color: var(--red-500);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+section#aboutUs button {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  height: 2.5rem;
+  padding: 0 1.9rem;
+  background-color: #C4161C;
+}
+
+/*# sourceMappingURL=aboutUsSection.css.map */

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+footer {
+  padding: 3.2rem 9rem;
+  margin-top: 150px;
+  background: #E8F4FF;
+}
+footer > div {
+  display: flex;
+  margin-top: 2rem;
+}
+footer .footer-column {
+  margin-right: 5rem;
+}
+footer .footer-column h2 {
+  font-size: 1.2rem;
+  color: #002245;
+}
+footer .footer-column > div {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+footer .footer-column div + p {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+footer .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 0.5rem;
+  background: #71A7D8;
+  color: #FFFFFF;
+}
+footer .icon-container span {
+  font-size: 20px;
+  font-weight: 100;
+}
+footer .calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 36px;
+  min-width: 36px;
+  border-radius: 0.75rem;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+footer .calendar-container > span {
+  font-size: 11px;
+  font-weight: 900;
+}
+footer .calendar-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2px 0;
+  background: #C4161C;
+}
+footer .calendar-container div span {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+footer ul {
+  margin-top: 1rem;
+  list-style: none;
+}
+footer li {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+footer li::before {
+  content: "•";
+  color: #C4161C;
+  font-weight: 700;
+  display: inline-block;
+  width: 1em;
+}
+footer strong {
+  font-weight: 800;
+}
+footer .foot {
+  align-items: center;
+  justify-content: space-between;
+}
+footer .foot p {
+  font-size: 10px;
+  font-weight: 600;
+}
+footer .tier-logo {
+  width: 36px;
+  height: 36px;
+}
+
+/*# sourceMappingURL=footer.css.map */

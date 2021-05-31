@@ -17,10 +17,10 @@ window.addEventListener('load', () => {
   serviceImg = document.querySelector('#serviceImg');
   arrows = Array.from(document.querySelectorAll('.arrow-container'));
 
-  arrows[0].addEventListener('click', handleImageCarousel);
-  arrows[1].addEventListener('click', handleImageCarousel);
-  arrows[0].direction = 1;
-  arrows[1].direction = -1;
+  // arrows[0].addEventListener('click', handleImageCarousel);
+  // arrows[1].addEventListener('click', handleImageCarousel);
+  // arrows[0].direction = 1;
+  // arrows[1].direction = -1;
 
   form.addEventListener('submit', handleSubmit);
   menu.addEventListener('click', handleMenuOpen);
@@ -29,14 +29,15 @@ window.addEventListener('load', () => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log(form.elements.checkbox.checked);
   const data = {
     name: form.elements.name.value,
     phone: form.elements.phone.value,
     email: form.elements.email.value,
     type: form.elements.type.value,
-    checkbox: form.elements.checkbox.checked,
+    checkbox: form.elements.checkboxAgreed.checked,
   };
+
+  console.log(data);
 };
 
 const handlePhoneChange = (event) => {

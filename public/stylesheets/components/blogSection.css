@@ -1,0 +1,78 @@
+section#blog {
+  max-width: 1210px;
+  margin-left: auto;
+  margin-right: auto;
+}
+section#blog .head {
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+section#blog .head h1 {
+  font-size: 1.5625rem;
+  font-weight: 800;
+  color: #024282;
+}
+section#blog .head h2 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #C4161C;
+}
+section#blog .head p {
+  font-size: 0.875rem;
+  color: #212121;
+}
+section#blog .container {
+  display: flex;
+  margin-top: 3rem;
+}
+section#blog .main-column {
+  flex: 1;
+}
+section#blog .main-column div {
+  display: flex;
+  align-items: center;
+}
+section#blog .main-column div + div {
+  margin-top: 1.5rem;
+}
+section#blog .secondary-column {
+  flex: 0 1 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section#blog .blog-img-container {
+  flex: 1 0 350px;
+  height: 230px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+section#blog .blog-img-container img {
+  border-radius: 1rem;
+}
+section#blog article {
+  flex: 0 1 auto;
+  margin-left: 1rem;
+}
+section#blog article time {
+  font-size: 0.8125rem;
+}
+section#blog article h3 {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: #024282;
+  margin: 0.75rem 0;
+}
+section#blog article p {
+  font-size: 0.875rem;
+  color: #212121;
+}
+section#blog article p.read-more {
+  font-size: 0.6875rem;
+  font-weight: 900;
+  color: #C4161C;
+  margin-top: 0.75rem;
+}
+
+/*# sourceMappingURL=blogSection.css.map */
