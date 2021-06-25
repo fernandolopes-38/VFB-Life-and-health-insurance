@@ -1,0 +1,116 @@
+@use '../../utils/variables' as *;
+@use '../../utils/helpers' as h;
+
+section#blog {
+  max-width: 1224px;
+  margin: 140px auto 0;
+
+  header {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      font-size: h.toRem(25);
+      font-weight: $font-extra-bold;
+      @include h.line-height(25, 30);
+      color: $color-blue-500;
+      margin-bottom: h.toRem(15);
+    }
+    h2 {
+      font-size: h.toRem(13);
+      font-weight: $font-bold;
+      @include h.line-height(13, 18);
+      color: $color-red-500;
+    }
+    p {
+      font-size: h.toRem(14);
+      font-weight: $font-regular;
+      @include h.line-height(14, 25);
+      color: $color-black-500;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    gap: h.toRem(40);
+    margin-top: h.toRem(50);
+  }
+
+  .main-column {
+    flex: 1 1 600px;
+
+    .post-container {
+      display: flex;
+      align-items: center;
+
+      & + div {
+        margin-top: h.toRem(20);
+      }
+    }
+
+    figure {
+      max-height: 230px;
+      border-radius: h.toRem(12);
+      
+      img {
+        height: 100%;
+        border-radius: h.toRem(12);
+      }
+    }
+
+    article {
+      @extend %article-text-styles;
+
+      margin-left: h.toRem(20);
+    }
+  }
+
+  .secondary-column {
+    flex: 0 1 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    article {
+      @extend %article-text-styles;
+    }
+  }
+}
+
+%article-text-styles {
+  time {
+    font-size: h.toRem(13);
+    font-weight: $font-regular;
+    @include h.line-height(13, 18);
+    color: $color-black-500;
+  }
+
+  h3 {
+    font-size: h.toRem(19);
+    font-weight: $font-extra-bold;
+    @include h.line-height(19, 30);
+    color: $color-blue-500;
+    margin-top: h.toRem(10);
+  }
+
+  & > p {
+    font-size: h.toRem(14);
+    font-weight: $font-regular;
+    @include h.line-height(14, 25);
+    color: $color-black-500;
+    margin-top: h.toRem(10);
+  }
+
+  footer {
+    margin-top: h.toRem(10);
+
+    p {
+      font-size: h.toRem(11);
+      font-weight: $font-black;
+      @include h.line-height(11, 15);
+      color: $color-red-500;
+    }
+  }
+}

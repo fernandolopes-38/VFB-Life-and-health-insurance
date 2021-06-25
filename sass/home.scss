@@ -1,0 +1,19 @@
+@use './utils/variables' as *;
+
+@use 'global';
+
+@use './components/header.scss';
+@use './components/home/hero.scss';
+@use './components/home/aboutus.scss';
+@use './components/home/services.scss';
+@use './components/home/blog.scss';
+@use './components/footer.scss';
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  section:not(#services) {
+    padding: 0 2rem;
+  }
+}

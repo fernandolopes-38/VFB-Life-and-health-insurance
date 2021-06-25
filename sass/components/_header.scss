@@ -1,0 +1,96 @@
+@use '../utils/variables' as *;
+@use '../utils/helpers' as h;
+@use 'button';
+
+body > header {
+  max-width: 1380px;
+  margin: 20px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media(max-width: 1380px) {
+    padding: 0 2rem;
+  }
+
+  img {
+    width: 160px;
+    height: 55px;
+  }
+
+  ul {
+    display: flex;
+    gap: 2.1875rem;
+
+    font-size: 0.9375rem;
+    line-height: 1.33;
+    font-weight: $font-bold;
+    @include h.letter-spacing(70);
+    
+    list-style: none;
+  }
+
+  .buttons-container {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    width: 9.75rem;
+    height: 2.5rem;
+
+    font-size: 0.6875rem;
+    @include h.line-height(11, 15);
+    @include h.letter-spacing(100);
+    
+    @extend %btn;
+    @extend %btn-blue;
+  }
+
+
+  .select {
+    // position: relative;
+    width: 30px;
+    height: 30px;
+    
+    font-size: 9px;
+    font-weight: $font-bold;
+    color: $color-gray-500;
+    
+    cursor: pointer;
+    border: 1px solid $color-gray-500;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    
+    select {
+      padding-left: 8px;
+      -moz-padding-start: 4px;
+      width: 100%;
+      height: 100%;
+      
+      appearance: none;
+      border: none;
+      outline: none;
+      margin: 0;
+      background-color: transparent;
+
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      cursor: inherit;
+      line-height: inherit;
+
+      &::-ms-expand {
+        display: none;
+      }
+    }
+    option {
+      font-size: 12px;
+      // padding: 0;
+      // margin: 0;
+    }
+  }
+  
+}

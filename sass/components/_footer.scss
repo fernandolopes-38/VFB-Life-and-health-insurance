@@ -1,0 +1,145 @@
+@use '../utils/variables' as *;
+@use '../utils/helpers' as h;
+
+body > footer {
+  padding: h.toRem(50) h.toRem(140);
+  margin-top: 150px;
+  background: $color-gray-100;
+
+  .logo {
+    width: 160px;
+    height: 55px;
+  }
+
+  .content {
+    display: flex;
+    gap: h.toRem(100);
+    margin-top: h.toRem(40);
+  }
+
+  .footer-column {
+    h2 {
+      font-size: h.toRem(17);
+      font-weight: $font-black;
+      @include h.line-height(17, 23);
+      color: $color-blue-700;
+
+      margin-bottom: h.toRem(20);
+    }
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    gap: h.toRem(10);
+
+    & + div {
+      margin-top: h.toRem(15);
+    }
+
+    p {
+      font-size: h.toRem(13);
+      font-weight: $font-semi-bold;
+      @include h.line-height(13, 20);
+      color: $color-black-500;
+      
+      strong {
+        font-size: h.toRem(14);
+        @include h.line-height(14, 20);
+        font-weight: $font-extra-bold;;
+      }
+    }
+  }
+
+  .icon-container {
+    @extend %centered-container;
+  
+    width: 36px;
+    height: 36px;
+    color: $color-white;
+
+    background: $color-blue-400;
+    border-radius: h.toRem(11);
+
+    span, i {
+      font-size: 1rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    font-size: h.toRem(14);
+    font-weight: $font-semi-bold;
+    @include h.line-height(14, 20);
+    color: $color-black-500;
+
+    li {
+      & + li {
+        margin-top: h.toRem(13);
+      }
+  
+      &::before {
+        content: "\2022";
+        color: $color-red-500;
+        font-weight: $font-bold;
+        display: inline-block; 
+        width: 1em;
+      }
+    }
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 36px;
+    height: 36px;
+
+    background: $color-white;
+    border-radius: h.toRem(11);
+  
+    overflow: hidden;
+
+    & > span{
+      font-size: 11px;
+      font-weight: $font-black;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    
+      padding: 2px 0;
+      background: $color-red-500;
+
+      span {
+        font-size: 9px;
+        font-weight: $font-black;
+        letter-spacing: 1px;
+        color: $color-white;
+      }
+    }
+  }
+
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: h.toRem(50);
+
+    p {
+      font-size: h.toRem(10);
+      font-weight: $font-semi-bold;
+      @include h.line-height(10, 20);
+      color: $color-black-500;
+    }
+  }
+  .tier-logo {
+    width: 36px;
+    height: 36px;
+  }
+}

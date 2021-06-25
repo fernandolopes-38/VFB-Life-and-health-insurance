@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+@function toRem($value) {
+  $remValue: math.div($value, 16) + rem; 
+  @return $remValue;
+}
+
+@mixin line-height($font-size, $line-heigh) {
+  line-height: math.div($line-heigh, $font-size);
+}
+@mixin letter-spacing($letter-spacing) {
+  letter-spacing: math.div($letter-spacing, 1000) * 1em;
+}
+
+@mixin white-gradient {
+  background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+%centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%figure-radius {
+  border-radius: toRem(10);
+}

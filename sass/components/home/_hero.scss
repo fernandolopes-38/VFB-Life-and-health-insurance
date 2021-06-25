@@ -1,0 +1,152 @@
+@use '../../utils/variables' as *;
+@use '../../utils/helpers' as h;
+@use '../button';
+@use '../form';
+@use 'sass:color';
+
+section#hero {
+  position: relative;
+  margin-top: h.toRem(29);
+
+  figure {
+    position: relative;
+    max-width: 1380px;
+    height: 550px;
+    border-radius: 1.5625rem;
+    overflow: hidden;
+    
+    img {
+      position: absolute;
+      bottom: -50px;
+      transform: scaleX(-1);
+    
+      width: 100%;
+      border-radius: 1.5625rem;
+    }
+  }
+
+  form {
+    position: absolute;
+    right: h.toRem(72);
+    bottom: 0;
+    width: h.toRem(410);
+    
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+
+    border-radius: h.toRem(20);;
+    padding: h.toRem(40) h.toRem(30);;
+    background-color: $color-white;  
+    box-shadow: 0 0  55px rgba(0, 0, 0, .1);
+    z-index: 10;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: $font-extra-bold;
+      @include h.line-height(24, 32);
+    
+      color: $color-blue-500;
+      margin-bottom: h.toRem(40);
+    }
+
+    button {
+      height: h.toRem(50);
+
+      font-size: 1rem;
+      @include h.line-height(16, 22);
+      @include h.letter-spacing(150);
+      
+      @extend %btn-form;
+      @extend %btn-red;
+
+      margin-top: h.toRem(25);
+    }
+  }
+    
+  .input-container {
+    @extend %input-container;
+
+    & + div {
+      margin-top: h.toRem(25);
+    }
+  }
+
+  .select-container {
+    @extend %select-container;
+  }
+  
+  .checkbox-container {
+    @extend %checkbox-container;
+
+    margin-top: h.toRem(25);
+  }
+
+  .providers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+    margin-left: h.toRem(40);
+    margin-right: h.toRem(490);
+
+    p {
+      font-size: h.toRem(13);
+      font-weight: $font-semi-bold;
+      @include h.line-height(13, 18);
+    }
+  }
+
+  .square {
+    height: 4.375rem;
+    width: 6.25rem;
+    background-color: $color-gray-100;
+  }
+ 
+  $animation-speed: 15s;
+  $slider-count: 12;
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-150px * (#{$slider-count} / 2)))}
+  }
+  
+  .slider {
+    position: relative;
+    margin-top: h.toRem(10);
+    overflow: hidden;
+    
+    &::before,
+    &::after {
+      @include h.white-gradient;
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 50px;
+      z-index: 5;
+    }
+    
+    &::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+    &::before {
+      left: 0;
+      top: 0;
+    }
+    
+    .slide-track {
+      animation: scroll $animation-speed linear infinite;
+      display: flex;
+      width: calc(150px * #{$slider-count});
+    }
+    
+    .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+    }
+  }
+}

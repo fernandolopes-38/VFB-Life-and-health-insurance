@@ -10,10 +10,9 @@
   <meta name="description" content="Request you insurance with us.">
   <meta name="keywords" content="insurance">
 
-  <link rel="stylesheet" href="./styles/global.css">
-  <link rel="stylesheet" href="./styles/index.css">
 
-  <link rel="stylesheet" href="./stylesheets/index.css">
+  <link rel="stylesheet" href="./assets/styles/home.css">
+
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" 
@@ -30,14 +29,8 @@
 <body>
   <header id="home">
     <a href="#">
-      <img class="logo" src="./img/logo.png" alt="logo">
+      <img class="logo" src="./assets/img/logo.png" alt="logo">
     </a>
-
-    <div id="menu" class="menu-toggle">
-      <div class="one"></div>
-      <div class="two"></div>
-      <div class="three"></div>
-    </div>
 
     <nav>
       <ul>
@@ -60,10 +53,10 @@
     </nav>
 
     <div class="buttons-container">
-      <button class="btn-header">REQUEST QUOTE</button>
+      <button>REQUEST QUOTE</button>
       
-      <div class="select-wrapper">
-        <select name="lang">
+      <div class="select">
+        <select id="langSelect">
           <option value="en">EN</option>
           <option value="pt">PT</option>
         </select>
@@ -72,28 +65,23 @@
   </header>
 
   <main>
-
     <section id="hero">
-      <div class="img-container">
-        <img 
-          class="img-background" 
-          src="./img/background.jpeg" 
-          alt="imagem de fundo"
-        >
-      </div>
+      <figure>
+        <img src="./assets/img/background.jpeg">
+      </figure>
   
       <form>
         <h1>Request an Insurance Quote</h1>
   
         <div class="input-container">
-          <span>Your Name</span>
-          <input type="text" name="name" value="" required>
+          <label for="name">Your Name</label>
+          <input id="name" type="text" name="name" required>
         </div>
         <div class="input-container">
-          <span>Phone</span>
+          <label for="phone">Phone</label for="">
           <input 
-            type="tel"
             id="phone"
+            type="tel"
             name="phone"
             title=”XXX-XXX-XXXX”
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
@@ -103,26 +91,26 @@
           >
         </div>
         <div class="input-container">
-          <span>Email</span>
-          <input type="email" name="email" value="" required>
+          <label for="email">Email</label for="">
+          <input id="email" type="email" name="email" value="" required>
         </div>
-  
-        <select name="type" id="">
-          <option value="">Select an insurance type</option>
-          <option value="0">Type 1</option>
-          <option value="1">Type 2</option>
-        </select>
-  
-        <label class="checkbox-container">
-          By checking this box to send a request of a quote in our website, you agree to our
-          <a href="#">Terms of Use</a>
-          &
-          <a href="#">Privacy Policy</a>.
+        <div class="select-container">
+          <select name="type" id="">
+            <option value="">Select an insurance type</option>
+            <option value="0">Type 1</option>
+            <option value="1">Type 2</option>
+          </select>
+        </div>
+        <div class="checkbox-container">
+          <input id="checkbox" type="checkbox" name="checkboxAgreed">
+          <label for="checkbox"></label>
+          <p>
+            By checking this box to send a request of a quote in our website, you agree to our
+            <a href="#">Terms of Use</a> &
+            <a href="#">Privacy Policy</a>.
+          </p>
+        </div>
 
-          <input type="checkbox" name="checkboxAgreed">
-          <span class="checkmark"></span>
-        </label>
-        
         <button type="submit">SEND REQUEST</button>
         
       </form>
@@ -133,22 +121,40 @@
         <div class="slider">
           <div class="slide-track">
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: aqua;"></div>
             </div>
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: yellowgreen;"></div>
             </div>
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: rebeccapurple;"></div>
             </div>
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: burlywood;"></div>
             </div>
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: tomato;"></div>
             </div>
             <div class="slide">
-              <div class="square"></div>
+              <div class="square" style="background-color: hotpink;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: aqua;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: yellowgreen;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: rebeccapurple;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: burlywood;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: tomato;"></div>
+            </div>
+            <div class="slide">
+              <div class="square" style="background-color: hotpink;"></div>
             </div>
           </div>
         </div>
@@ -156,16 +162,21 @@
     </section>
     
     <section id="aboutUs">
-      <img class="secundary-img" src="./img/nurse.jpg" alt="">
+      <figure class="secondary-img">
+        <img src="./assets/img/nurse.jpg">
+      </figure>
 
-      <div class="main-img-container">
-        <img class="" src="./img/desk.jpg" alt="">
-        <img id="playButton" src="./img/play.png" alt="play button">
-      </div>
+      <figure class="main-img">
+        <img src="./assets/img/desk.jpg">
+        <img id="playButton" src="./assets/img/play.png" alt="play button">
+      </figure>
 
       <article>
-        <p class="subtitle">About Us:</p>
-        <h1>A committed company to give the true value to you and your family.</h1>
+        <header>
+          <p class="subtitle">About Us:</p>
+          <h1>A committed company to give the true value to you and your family.</h1>
+        </header>
+
         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque. Mauris ultrices ultricies lorem et ultricies. Morbi hendrerit varius consequat. Nam laoreet nulla in urna pharetra lobortis nec ut lectus.</p>
         <ul>
           <li>Lorem ipsum dolor sit amet.</li>
@@ -179,115 +190,133 @@
     </section>
 
     <section id="services">
-      <div class="wave-top">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path 
-            d="M0.00,49.99 C341.08,-4.64 301.58,132.52 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" 
-            style="stroke: none; fill: #fff;"
-          ></path>
+      <div class="wave wave-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="250" viewBox="0 0 1440 250">
+          <path id="Caminho_7" data-name="Caminho 7" d="M1603.762,250.468s-72.825,32.437-302.987,18.162S937.146,190.162,721,176.749s-281.024,52.312-557.234,35.174V22.26h1440Z" transform="translate(-163.762 -22.26)" fill="#fff"/>
         </svg>
       </div>
 
-      <div class="services-carousel">
-        <h1>Our Insurances</h1>
+      <div class="content">
+        <div class="services-carousel">
+          <h1>Our Insurances</h1>
+  
+          <div class="carousel-container">
+            <input type=radio name="slider" id="slide1" checked />
+            <input type=radio name="slider" id="slide2" />
+            <input type=radio name="slider" id="slide3" />
+            <input type=radio name="slider" id="slide4" />
+  
+            <div class="slider-container">
+              <div class="slide-items">
 
-        <div class="carousel-container">
-          <input type=radio name="slider" id="slide1" checked />
-          <input type=radio name="slider" id="slide2" />
-          <input type=radio name="slider" id="slide3" />
-
-          <div class="slider-container">
-            <div class="slide-items">
-              <div class="img-container">
-                <img src="./img/insurance.png" />
-                <h1 class="image-title">Health Insurance</h1>
-              </div>
-              <div class="img-container">
-                <img src="./img/background.jpeg" />
-                <h1 class="image-title">Life Insurance</h1>
-              </div>
-              <div class="img-container">
-                <img src="./img/desk.jpg" />
-                <h1 class="image-title">Dental Insurance</h1>
+                <figure>
+                  <img src="./assets/img/insurance.png" />
+                  <figcaption>
+                    <h1 class="image-title">Health Insurance</h1>
+                  </figcaption>
+                </figure>
+              
+                <figure>
+                  <img src="./assets/img/background.jpeg" />
+                  <figcaption>
+                    <h1 class="image-title">Life Insurance</h1>
+                  </figcaption>
+                </figure>
+              
+                <figure>
+                  <img src="./assets/img/desk.jpg" />
+                  <figcaption>
+                    <h1 class="image-title">Dental Insurance</h1>
+                  </figcaption>
+                </figure>
+              
+                <figure>
+                  <img src="./assets/img/nurse.jpg" />
+                  <figcaption>
+                    <h1 class="image-title">Vital Insurance</h1>
+                  </figcaption>
+                </figure>
+                
               </div>
             </div>
+  
+            <div class="arrows-container">
+              <label for="slide1"><i class="fas fa-chevron-up"></i></label>
+              <label for="slide2"><i class="fas fa-chevron-up"></i></label>
+              <label for="slide3"><i class="fas fa-chevron-up"></i></label>
+              <label for="slide4"><i class="fas fa-chevron-up"></i></label>
+            </div>
           </div>
-
-          <div class="arrows-container">
-            <label for="slide1"></label>
-            <label for="slide2"></label>
-            <label for="slide3"></label>
-          </div>
+  
+          <p>READ MORE</p>
         </div>
+  
+        <div class="clients-opinions">
+          <h1>What our clients says:</h1>
+  
+          <div class="opinio-carousel">
+            <img src="./assets/img/Elipse0.png" alt="">
+  
 
-        <p>READ MORE</p>
-      </div>
-
-      <div class="clients-opinions">
-        <h1>What our clients says:</h1>
-
-        <div>
-          <img src="./img/Elipse0.png" alt="">
-
-          <div>
-            <img class="main-avatar" src="./img/Elipse1.png" alt="">
-            <div class="opinion-container">
+            <article>
+              <img class="main-avatar" src="./assets/img/Elipse1.png" alt="">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque. Mauris ultrices ultricies lorem et ultricies. Morbi hendrerit varius consequat. Nam laoreet nulla in urna pharetra lobortis nec ut lectus.</p>
               <p class="client-name">Client Name</p>
-            </div>
+            </article>
+
+            
+            <img src="./assets/img/Elipse2.png" alt="">
           </div>
-          
-          <img src="./img/Elipse2.png" alt="">
         </div>
       </div>
       
-      <div class="wave-bottom">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path 
-            d="M0.00,49.99 C384.53,-88.51 202.26,135.49 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" 
-            style="stroke: none; fill: #fff;"
-          ></path>
-        </svg>
+      <div class="wave wave-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="250" viewBox="0 0 1440 250">
+          <path id="Caminho_6" data-name="Caminho 6" d="M1469.239,369.532c-5.9.588-252.38,49.981-467.134,49.981S703.574,347.17,537.081,347.17s-175.1,90.857-507.842,90.857V597.17h1440Z" transform="translate(-29.239 -347.17)" fill="#fff"/>
+        </svg>        
       </div>
-
       <div id="dotted"></div>
     </section>
 
     <section id="blog">
-      <div class="head">
+      <header>
         <h2>LATEST NEWS</h2>
         <h1>
           Follow Our Blog <br/>
           & Read Our Content
         </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-      </div>
+      </header>
 
-      <div class="container">
+      <div class="content">
         <div class="main-column">
-          <div>
-            <div class="blog-img-container">
-              <img src="./img/life.jpg" alt="">
-            </div>
+          <div class="post-container">
+            <figure>
+              <img src="./assets/img/life.jpg" alt="">
+            </figure>
 
             <article>
               <time>Month 00, 2021</time>
               <h3>Three Cool benefits of your life insurance</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-              <p class="read-more">READ MORE</p>
+              <footer>
+                <p>READ MORE</p>
+              </footer>
             </article>
           </div>
 
-          <div>
-            <div class="blog-img-container">
-              <img src="./img/nurse2.jpg" alt="">
-            </div>
+          <div class="post-container">
+            <figure>
+              <img src="./assets/img/nurse2.jpg" alt="">
+            </figure>
 
             <article>
               <time>Month 00, 2021</time>
               <h3>Six tips to save on your health insurance</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-              <p class="read-more">READ MORE</p>
+              <footer>
+                <p>READ MORE</p>
+              </footer>
             </article>
           </div>
         </div>
@@ -297,21 +326,29 @@
             <article>
               <h3>A better way to protect your loved ones</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-              <p class="read-more">READ MORE</p>
+              <footer>
+                <p>READ MORE</p>
+              </footer>
             </article>
           </div>
+
           <div>
             <article>
               <h3>Three Cool benefits of your life insurance</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-              <p class="read-more">READ MORE</p>
+              <footer>
+                <p>READ MORE</p>
+              </footer>
             </article>
           </div>
+
           <div>
             <article>
               <h3>Three Cool benefits of your life insurance</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in eleifend nisl. Proin lobortis metus quis mi molestie, eleifend suscipit neque scelerisque.</p>
-              <p class="read-more">READ MORE</p>
+              <footer>
+                <p>READ MORE</p>
+              </footer>
             </article>
           </div>
         </div>
@@ -321,32 +358,32 @@
   </main>
 
   <footer id="contact">
-    <img class="logo" src="./img/logo.png" alt="logo">
-    <div>
+    <img class="logo" src="./assets/img/logo.png" alt="logo">
+    <div class="content">
       <div class="footer-column">
         <h2>Contact Information:</h2>
-        <div>
+
+        <div class="footer-row">
           <div class="icon-container">
-            <span class="material-icons-outlined">
-              location_on
-            </span>
+            <span class="material-icons-outlined">location_on</span>
           </div>
           <p>2295 South Hiawassee Road 107, <br/>
             Orlando, Florida, USA.</p>
         </div>
-        <div>
+        <div class="footer-row">
           <div class="icon-container">
-            <span class="material-icons-outlined">
-              mail
-            </span>
+            <i class="far fa-envelope"></i>
           </div>
           <p>contact@myvfbinsurance.com</p>
         </div>
-        <div>
-          <div class="icon-container"></div>
+        <div class="footer-row">
+          <div class="icon-container">
+            <i class="fab fa-whatsapp"></i>
+          </div>
           <p>(000) 000 - 0000</p>
         </div>
       </div>
+
       <div class="footer-column">
         <h2>Our Insurances:</h2>
         <ul>
@@ -357,10 +394,11 @@
           <li>Travel Insurance</li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h2>Latest Articles:</h2>
 
-        <div>
+        <div class="footer-row">
           <div class="calendar-container">
             <span>00</span>
             <div>
@@ -369,7 +407,8 @@
           </div>
           <p><strong>Three Cool benefits of your life insurance</strong></p>
         </div>
-        <div>
+
+        <div class="footer-row">
           <div class="calendar-container">
             <span>00</span>
             <div>
@@ -378,7 +417,8 @@
           </div>
           <p><strong>Six tips to save on your health insurance</strong></p>
         </div>
-        <div>
+
+        <div class="footer-row">
           <div class="calendar-container">
             <span>00</span>
             <div>
@@ -392,10 +432,10 @@
 
     <div class="foot">
       <p>Copyright © 2021 VFB Life and Health Insurance. All rights reserved.</p>
-      <img class="tier-logo" src="./img/tier-logo.png" alt="tier digital logo">
+      <img class="tier-logo" src="./assets/img/tier-logo.png" alt="tier digital logo">
     </div>
   </footer>
 
-  <script src="./js/index.js"></script>
+  <script src="./assets/js/index.js"></script>
 </body>
 </html>

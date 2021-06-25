@@ -1,0 +1,107 @@
+@use '../../utils/variables' as *;
+@use '../../utils/helpers' as h;
+@use '../button';
+
+section#aboutUs {
+  max-width: 1110px;
+  margin: 100px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: h.toRem(20);
+
+  figure {
+    @extend %figure-radius;
+
+    img:not(#playButton) {
+      width: 100%;
+      @extend %figure-radius;
+    }
+
+    &.main-img {
+      position: relative;
+      max-width: h.toRem(350);
+
+      img#playButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      
+        cursor: pointer;
+      }
+    }
+
+    &.secondary-img {
+      max-width: h.toRem(240);
+    }
+  }
+
+  article {
+    flex: 0 1 h.toRem(450);
+
+    header {
+      margin-bottom: h.toRem(20);
+
+      .subtitle {
+        font-size: h.toRem(13);
+        font-weight: $font-semi-bold;
+        @include h.line-height(13, 18);
+        color: $color-black-500;
+  
+        margin-bottom: 5px;
+      }
+  
+      h1{
+        font-size: h.toRem(25);
+        font-weight: $font-extra-bold;
+        @include h.line-height(25, 30);
+        color: $color-blue-500;
+      
+      }
+    }
+
+    .text {
+      font-size: h.toRem(14);
+      font-weight: $font-regular;
+      @include h.line-height(14, 25);
+      color: $color-black-500;
+    }
+
+    ul {
+      list-style: none;
+      font-size: h.toRem(14);
+      font-weight: $font-regular;
+      @include h.line-height(14, 19);
+      color: $color-black-500;
+      margin: h.toRem(20);
+    }
+  
+    li {
+      margin-top: h.toRem(10);
+  
+      &::before {
+        content: "\2022";
+        color: $color-red-500;
+        font-weight: bold;
+        display: inline-block; 
+        width: 1em;
+      }
+    }
+  
+    button {
+      width: h.toRem(140);
+      height: h.toRem(40);
+
+      font-size: h.toRem(12);
+      @include h.line-height(12, 16);
+      @include h.letter-spacing(120);
+      
+      @extend %btn;
+      @extend %btn-red;
+    }
+  }
+
+}

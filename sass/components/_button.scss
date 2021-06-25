@@ -1,0 +1,24 @@
+@use '../utils/variables' as *;
+@use '../utils/helpers' as h;
+
+%btn {
+  color: $color-white;
+  font-weight: $font-black;
+  text-transform: uppercase;
+  border-radius: .5rem;
+}
+
+%btn-form {
+  color: $color-white;
+  font-weight: $font-black;
+  text-transform: uppercase;
+  border-radius: h.toRem(10);
+}
+
+%btn-blue {
+  background-color: $color-blue-500;
+}
+
+%btn-red {
+  background-color: $color-red-500;
+}

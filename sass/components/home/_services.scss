@@ -1,0 +1,237 @@
+@use '../../utils/variables' as *;
+@use '../../utils/helpers' as h;
+@use 'sass:math';
+
+$num-of-slide: 4;
+
+section#services {
+  position: relative;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 250px 2rem 45px;
+    background: $color-blue-600;
+  }
+
+  .services-carousel {
+    max-width: 1150px;
+    width: 100%;
+    z-index: 2;
+
+    h1 {
+      font-size: 6.25rem;
+      font-weight: $font-black;
+      color: $color-blue-700;
+    }
+    p {
+      font-size: 0.9375rem;
+      font-weight: $font-black;
+      color: $color-white;
+    
+      margin-left: 15px;
+    }
+  }
+  
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    gap: h.toRem(10);
+
+    input { display: none; }
+    
+    label {
+      color: $color-white;
+      cursor: pointer;
+      
+      display: none;
+      align-items: center;
+      justify-content: center;
+      
+      height: 40px;
+      width: 40px;
+      background: $color-blue-700;
+      
+      border-radius: 0.5rem;
+      transition: filter 0.2s;
+  
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  figure {
+    position: relative;
+    max-width: 1100px;
+    height: percentage(math.div(1, $num-of-slide));
+
+    @extend %figure-radius;
+
+    img {
+      width: 100%;
+      max-height: 500px;
+      @extend %figure-radius;
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: -18px;
+      left: 10px;
+
+      h1 {
+        color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $color-white;
+        
+        opacity: 0;
+  
+        background: linear-gradient(transparent 50%, $color-white 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+  
+        transition: opacity 1s ease-out 0.6s;
+      }
+    }
+  }
+
+  .slider-container {
+    flex: 0 1 1100px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1rem;
+  } 
+  
+  .slide-items {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: percentage($num-of-slide);
+    transition: top 0.5s;
+  }
+
+  .arrows-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+  }
+
+  @for $i from 1 through $num-of-slide {
+    #slide#{$i}:checked {
+      & ~ .slider-container .slide-items {
+        top: percentage(1 - $i);
+      }
+      & ~ .slider-container .slide-items figure:nth-child(#{$i}) > h1 {
+        opacity: 1;
+      }
+    }
+  }
+  @for $i from 1 through ($num-of-slide - 1) {
+    #slide#{$i}:checked {
+      & ~ .arrows-container label:nth-child(#{$i + 1}) {
+        display: flex;
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+  #slide#{$num-of-slide}:checked ~ .arrows-container label:nth-child(1) {
+    display: flex;
+    transform: rotateZ(180deg);
+    order: 2;
+  }
+  @for $i from 2 through $num-of-slide {
+    #slide#{$i}:checked {
+      & ~ .arrows-container label:nth-child(#{$i - 1}) {
+        display: flex;
+      }
+    }
+  }
+  #slide#{1}:checked ~ .arrows-container label:nth-child(#{$num-of-slide}) {
+    display: flex;
+    order: -1;
+  }
+
+  .clients-opinions {
+    max-width: 1090px;
+    width: 100%;
+    text-align: center;
+
+    margin-top: h.toRem(130);
+  
+    z-index: 20;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: $font-extra-bold;
+      @include h.line-height(32, 30);
+      color: $color-yellow-500;
+    }
+
+    .opinio-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: h.toRem(90);
+
+      article {
+        position: relative;
+        flex: 0 1 550px;
+
+        padding: h.toRem(90) h.toRem(50) h.toRem(30);
+      
+        background: $color-gray-100;
+        border: 1px solid $color-blue-550;
+        border-radius: h.toRem(20);
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        
+        p {
+           font-size: 0.9375rem;
+           line-height: 1.5625rem;
+           color: $color-blue-500;
+         }
+    
+         .client-name {
+          font-weight: $font-black;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  
+  .wave {
+    position: absolute;
+
+    z-index: 10;
+    &-top { top: -7px; }
+    &-bottom { bottom: -7px; }
+  }
+
+  #dotted {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 480px;
+    width: 100%;
+  
+    background-image: url('../img/grade.png');
+  }
+}
+
+
+
