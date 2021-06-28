@@ -2,11 +2,19 @@
 @use '../utils/helpers' as h;
 
 body > footer {
-  padding: h.toRem(50) h.toRem(140);
   margin-top: 150px;
   background: $color-gray-100;
+  
+  .wrapper {    
+    display: flex;
+    flex-direction: column;
+    max-width: 1160px;
+    padding: h.toRem(50) 2rem;
+    margin: 0 auto;
+  }
 
   .logo {
+    align-self: flex-start;
     width: 160px;
     height: 55px;
   }

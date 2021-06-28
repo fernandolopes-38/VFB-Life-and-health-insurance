@@ -538,17 +538,17 @@ section#services figure figcaption {
   position: absolute;
   bottom: -18px;
   left: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-out 0.6s;
 }
 section#services figure figcaption h1 {
   color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #fff;
-  opacity: 0;
   background: linear-gradient(transparent 50%, #fff 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: opacity 1s ease-out 0.6s;
 }
 section#services .slider-container {
   flex: 0 1 1100px;
@@ -575,25 +575,25 @@ section#services .arrows-container {
 section#services #slide1:checked ~ .slider-container .slide-items {
   top: 0%;
 }
-section#services #slide1:checked ~ .slider-container .slide-items figure:nth-child(1) > h1 {
+section#services #slide1:checked ~ .slider-container .slide-items figure:nth-child(1) > figcaption {
   opacity: 1;
 }
 section#services #slide2:checked ~ .slider-container .slide-items {
   top: -100%;
 }
-section#services #slide2:checked ~ .slider-container .slide-items figure:nth-child(2) > h1 {
+section#services #slide2:checked ~ .slider-container .slide-items figure:nth-child(2) > figcaption {
   opacity: 1;
 }
 section#services #slide3:checked ~ .slider-container .slide-items {
   top: -200%;
 }
-section#services #slide3:checked ~ .slider-container .slide-items figure:nth-child(3) > h1 {
+section#services #slide3:checked ~ .slider-container .slide-items figure:nth-child(3) > figcaption {
   opacity: 1;
 }
 section#services #slide4:checked ~ .slider-container .slide-items {
   top: -300%;
 }
-section#services #slide4:checked ~ .slider-container .slide-items figure:nth-child(4) > h1 {
+section#services #slide4:checked ~ .slider-container .slide-items figure:nth-child(4) > figcaption {
   opacity: 1;
 }
 section#services #slide1:checked ~ .arrows-container label:nth-child(2) {
@@ -647,17 +647,25 @@ section#services .clients-opinions .opinio-carousel {
 }
 section#services .clients-opinions .opinio-carousel article {
   position: relative;
-  flex: 0 1 550px;
-  padding: 5.625rem 3.125rem 1.875rem;
-  background: #E8F4FF;
-  border: 1px solid #A6CAEA;
-  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
 }
 section#services .clients-opinions .opinio-carousel article img {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+section#services .clients-opinions .opinio-carousel article > div {
+  flex: 0 1 550px;
+  display: none;
+  padding: 5.625rem 3.125rem 1.875rem;
+  background: #E8F4FF;
+  border: 1px solid #A6CAEA;
+  border-radius: 1.25rem;
+}
+section#services .clients-opinions .opinio-carousel article > div.active {
+  display: block;
 }
 section#services .clients-opinions .opinio-carousel article p {
   font-size: 0.9375rem;
@@ -670,6 +678,8 @@ section#services .clients-opinions .opinio-carousel article .client-name {
 }
 section#services .wave {
   position: absolute;
+  max-width: 1440px;
+  width: 100%;
   z-index: 10;
 }
 section#services .wave-top {
@@ -733,14 +743,17 @@ section#blog .main-column .post-container + div {
   margin-top: 1.25rem;
 }
 section#blog .main-column figure {
+  flex: 0 1 350px;
   max-height: 230px;
   border-radius: 0.75rem;
 }
 section#blog .main-column figure img {
   height: 100%;
+  width: 100%;
   border-radius: 0.75rem;
 }
 section#blog .main-column article {
+  flex: 1 1 320px;
   margin-left: 1.25rem;
 }
 section#blog .secondary-column {
@@ -780,11 +793,18 @@ section#blog .main-column article footer p, section#blog .secondary-column artic
 }
 
 body > footer {
-  padding: 3.125rem 8.75rem;
   margin-top: 150px;
   background: #E8F4FF;
 }
+body > footer .wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1160px;
+  padding: 3.125rem 2rem;
+  margin: 0 auto;
+}
 body > footer .logo {
+  align-self: flex-start;
   width: 160px;
   height: 55px;
 }

@@ -51,16 +51,19 @@ section#blog {
     }
 
     figure {
+      flex: 0 1 350px;
       max-height: 230px;
       border-radius: h.toRem(12);
       
       img {
         height: 100%;
+        width: 100%;
         border-radius: h.toRem(12);
       }
     }
 
     article {
+      flex: 1 1 320px;
       @extend %article-text-styles;
 
       margin-left: h.toRem(20);
